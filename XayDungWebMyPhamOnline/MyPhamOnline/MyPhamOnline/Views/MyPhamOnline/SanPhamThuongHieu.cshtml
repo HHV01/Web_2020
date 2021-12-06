@@ -1,0 +1,64 @@
+﻿
+@using MyPhamOnline.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+@{
+    ViewBag.Title = "TRANG CHỦ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style type="text/css">
+    .imgbook {
+        transition: all 1s ease-in;
+        width: 400px;
+    }
+
+        .imgbook:hover {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+</style>
+
+<h2 class="text-center">SẢN PHẨM THEO THƯƠNG HIỆU</h2>
+<hr>
+<div class="row text-center">
+    @{
+        var i = 0;
+    }
+    @foreach (var sanpham in Model)
+    {
+        i++;
+        if (i % 3 == 0)
+        {
+            @:<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6 hiden-xs">
+            }
+            else
+            {
+                @:<div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+                }
+                <div class="thumbnail">
+                    <img src="~/Images/@sanpham.AnhBia" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook" style=" width :400px;">
+                    <div class="caption">
+                        <h4 style=" min-height :70px;">
+                            <a href="@Url.Action("ChiTietSanPham", "MyPhamOnline", new {id = sanpham.MaTH})">@sanpham.TenSP</a>
+                        </h4>
+                        <p>
+                            <a href="@Url.Action("ThemGioHang", "GioHang", new {msp = sanpham.MaSP, url = Request.Url.ToString()})" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            @:</div>
+        }
+</div>
+</div>
+Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("SanPhamThuongHieu", new { iMaTH = ViewBag.MaTH, page = page }))
+</div>
+<style>
+    .MenuTrang {
+        display: inline;
+        text-align: center;
+    }
+</style>

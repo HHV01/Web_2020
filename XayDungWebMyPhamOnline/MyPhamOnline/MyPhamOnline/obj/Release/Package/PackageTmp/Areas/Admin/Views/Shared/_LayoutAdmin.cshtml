@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial- scale=1">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css") @Scripts.Render("~/Scripts/js")
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-static-top" style="background-color:darkkhaki;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navAdmin" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"style="background-color:darkkhaki;" href="@Url.Action("Index","Home")">Admin</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navAdmin">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index","SanPham")">QUẢN LÝ SẢN PHẨM</a> </li>
+                    <li><a href="@Url.Action("Index","DanhSachSP")">QUẢN LÝ DANH MỤC SẢN PHẨM</a> </li>
+                    <li><a href="@Url.Action("Index","ThuongHieu")">QUẢN LÝ THƯƠNG HIỆU </a> </li>
+                    <li><a href="@Url.Action("Index","KhachHang")">QUẢN LÝ KHÁCH HÀNG</a> </li>
+                    <li>
+                        <a href="@Url.Action("Index","DonHang")">QUẢN LÝ ĐƠN HÀNG</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="container well">
+        <div style="text-align:center;">
+            <p>ADMIN</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Get, new { @class = "navbar- form navbar-right", @role = "search" }))
+{
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Tìm kiếm" name="strSearch">
+    </div>
+
+    <button type="submit" class="btn btn-default">Tìm</button>
+}
+
+    <nav class="navbar navbar-static-top" style="background-color:darkkhaki;">
+    <!--navbar-fixed-top-->
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <nav class="navbar navbar-static-top" style="background-color:darkkhaki;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar navbar-static-top" style="background-color:darkkhaki;" href="#">Mỹ Phẩm Online</a>
+        </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- /.navbar-collapse -->
+    </nav>
+    <!-- /.container-->
+</nav>

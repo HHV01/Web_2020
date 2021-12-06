@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MyPhamOnline.Models.SANPHAM>
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<hr>
+
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center"style=" font-weight:bold;">SẢN PHẨM MỚI</h2>
+        @foreach (var sanpham in Model)
+        {
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xs-6">
+        <div class="thumbnail" style="border-width:unset;border-color:blue;">
+            <div class="thumbnail">
+                <img src="~/Images/@sanpham.AnhBia" />
+                <div class" caption">
+                    <h4 style="min-height : 70px;">
+                        <a href="@Url.Action("ChiTietSanPham", "MyPhamOnline", new { id = sanpham.MaSP })">@sanpham.TenSP</a>
+                    </h4>
+                    <p>
+                        <a href="@Url.Action("ThemGioHang","GioHang",new { ms = sanpham.MaSP, url = Request.Url.ToString() })" class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+        }
+    </div>
+
+    </div>
+
+
+<nav class="text-center">
+    <!-- Add class .pagination-lg for larger blocks or .pagination-sm for smaller blocks-->
+    <div class="container">
+        <div class="row">
+            <ul class="pagination">
+                <li> <a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li class="disabled"><a href="#">5</a></li>
+                <li> <a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
+            </ul>
+                </div>
+        </div>
+</nav>

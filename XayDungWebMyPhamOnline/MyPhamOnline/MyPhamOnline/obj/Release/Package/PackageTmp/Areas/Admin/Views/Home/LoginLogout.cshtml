@@ -1,0 +1,18 @@
+﻿@using MyPhamOnline.Models @{
+    KHACHHANG kh = (KHACHHANG)Session["TaiKhoan"];
+
+}
+
+//Tùy chọn để hiển thị
+@if (Session["TaiKhoan"] == null) //Giao diện Login
+{
+    <li><a href="~/User/DangKy"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+    <li><a href="~/User/DangNhap?id=1"><span class="glyphicon glyphicon-log- in"></span> Đăng nhập</a></li>
+
+}
+Else //Giao diện Logout
+{
+<li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào:@kh.HoTen</a></li>
+<li><a href="@Url.Action("DangXuat","User")"><span class="glyphicon glyphicon-log- out"></span> Đăng xuất</a></li>
+}
+

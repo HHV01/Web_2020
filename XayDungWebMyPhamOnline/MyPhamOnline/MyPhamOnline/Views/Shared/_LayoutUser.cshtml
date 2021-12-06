@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title> MyPhamOnline</title>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!meta charset utf="8">
+    <!--bootstrap-->
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--coustom css-->
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link rel="~/stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8" />
+    <!--script-->
+    <script src="~/js/jquery-2.1.4.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script type="~/text/javascript" src="js/move-top.js"></script>
+    <script type="~/text/javascript" src="js/easing.js"></script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--script-->
+    <!-- WRONG! -->
+    <style type="text/css">
+        .fb-comment-comment {
+            width: 500px;
+        }
+    </style>
+    <div class="fb-comment-comment" data-href="{your-comment-url}"></div>
+
+    <!-- CORRECT -->
+    <div class="fb-comment-comment" data-href="{your-comment-url}" data-width="500"></div>
+
+    <style type="text/css">
+        img {
+            max-width: 100%;
+        }
+
+            img.lazyload {
+                opacity: 0.001;
+                object-fit: scale-down !important;
+            }
+
+        .fb-customerchat > span > iframe.fb_customer_chat_bounce_out_v2 {
+            max-height: 0 !important;
+        }
+
+        .fb-customerchat > span > iframe.fb_customer_chat_bounce_in_v2 {
+            max-height: calc(100% - 80px) !important;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="kJfSZVQ0"></script>
+    <nav class="navbar navbar-static-top" style="background-color:darkkhaki;">
+        <!--navbar-fixed-top-->
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar1" style="position:absolute;">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">TRANG CHỦ</a> </li>
+                    <li><a href="#">GIỚI THIỆU</a> </li>
+                    <li><a href="#">LIÊN HỆ</a> </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">SẢN PHẨM<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @Html.Action("DanhSachSPPartial", "MyPhamOnline")
+
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">THƯƠNG HIỆU<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @Html.Action("ThuongHieuPartial", "MyPhamOnline")
+
+                        </ul>
+                    </li>
+                    <div class="navbar-form navbar-left hidden-xs search-box comicsearchbox">
+                        <div class="input-group">
+                            <input type="text" class="searchinput form-control" name="s" value="" placeholder="Tìm kiếm ..." autocomplete="off">
+                            <div class="input-group-btn">
+                                <input type="submit" value="" class="searchbutton btn btn-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <li><a href="@Url.Action("DangNhap","User")">ĐĂNG NHẬP</a> </li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="@Url.Action("DangKy","User")">ĐĂNG KÍ</a> </li>
+
+                    <a href="@Url.Action("GioHang","GioHang")" style="color:white;font-weight:bold;text-decoration:none;">
+                        <img src="~/Images/Giohang.gif" />
+                        Giỏ hàng @ViewBag.TongSoLuong
+                    </a>
+
+
+                </ul>
+
+
+            </div>
+        </div>
+        <!-- /.container-->
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="carousel1" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel1" data-slide-to="0" class="active"> </li>
+                        <li data-target="#carousel1" data-slide-to="1" class=""> </li>
+                        <li data-target="#carousel1" data-slide-to="2" class=""> </li>
+                        <li data-target="#carousel1" data-slide-to="3" class=""> </li>
+                        <li data-target="#carousel1" data-slide-to="4" class=""> </li>
+                        <li data-target="#carousel1" data-slide-to="5" class=""> </li>
+                    </ol>
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <img class="img-responsive" src="~/Images/Slider/01.jpeg" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 1 </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="~/Images/Slider/02.jpg" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 2 </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="~/Images/Slider/03.jfif" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 3 </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="~/Images/Slider/04.png" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 4 </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="~/Images/Slider/05.png" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 5 </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="~/Images/Slider/06.jpg" alt="thumb">
+                            <div class="carousel-caption"> Quảng cáo 6 </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel1" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel1" data-slide="next"><span class="icon-next"></span></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+
+
+            @RenderBody()
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="blog">
+            <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="vertical-align: bottom; height: 200px;" data-ad-client="ca-pub-4940732996721405" data-ad-slot="9471605305" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_2_anchor" style="display: block; border: none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1200px; background-color: transparent; overflow: visible;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:1200px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="1200" height="280" frameborder="0" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4940732996721405&amp;output=html&amp;h=280&amp;slotname=9471605305&amp;adk=139591078&amp;adf=233035236&amp;pi=t.ma~as.9471605305&amp;w=1200&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1627546772&amp;rafmt=1&amp;psa=1&amp;format=1200x280&amp;url=https%3A%2F%2Fwattpad.vn%2Fnang-dau-cuc-pham-270521%2Fchuong-310%2F%23j_content&amp;flash=0&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjkyLjAuNDUxNS4xMDciLFtdLG51bGwsbnVsbCxudWxsXQ..&amp;tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hdHRlc3RhdGlvbi5hbmRyb2lkLmNvbSIsInN0YXRlIjo3fV0.&amp;dt=1627546763800&amp;bpp=4&amp;bdt=452&amp;idt=1184&amp;shv=r20210727&amp;mjsv=m202107280101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D19b233d976e8e073-2270b3a08dca0031%3AT%3D1627380173%3ART%3D1627380173%3AS%3DALNI_MbnvnModsnqZrQtAgqPqrWtj2kP6A&amp;prev_fmts=0x0%2C1200x280%2C1200x280&amp;nras=1&amp;correlator=6437996980049&amp;frm=20&amp;pv=1&amp;ga_vid=611247241.1627380178&amp;ga_sid=1627546765&amp;ga_hid=1676771368&amp;ga_fc=0&amp;u_tz=420&amp;u_his=3&amp;u_java=0&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=160&amp;ady=12798&amp;biw=1519&amp;bih=356&amp;scr_x=0&amp;scr_y=11378&amp;eid=20211866%2C21067496&amp;oid=3&amp;psts=AGkb-H-kztmUznrQd2rhrmiZO8Wdd7VBZV6VFI-DXk4RfMTCf7xPK2HwLVbioxhn00ae407Ssx4ZpgmJOno&amp;pvsid=947068275630914&amp;pem=52&amp;ref=https%3A%2F%2Fwattpad.vn%2Fnang-dau-cuc-pham-270521%2Fchuong-309%2F&amp;eae=0&amp;fc=896&amp;brdim=0%2C0%2C0%2C0%2C1536%2C0%2C1536%2C824%2C1536%2C356&amp;vis=1&amp;rsz=%7C%7CeEbr%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;ifi=3&amp;uci=a!3&amp;btvi=3&amp;fsb=1&amp;xpc=J8MtluJGMt&amp;p=https%3A//wattpad.vn&amp;dtd=9214" marginwidth="1000" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-google-query-id="CKeXhZnsh_ICFenv4QodFPsGcA" data-load-complete="true"></iframe></ins></ins></ins>
+            <div class="container">
+            </div>
+            @Html.Action("SanPhamBanNhieuPartial", "MyPhamOnline")
+        </div>
+    
+
+
+    <div class="footer">
+        <div class="container well">
+            <div class="col-md-6 mrg1">
+                <div class="col-md-6 brk4">
+                    <div class="about">
+                        <h4>Thông Tin</h4>
+                        <ul>
+                            <li>Họ Và Tên :Hoàng Hồng Vân</li>
+                            <li>Mssv: 1924801030059</li>
+                            <li>Lớp : D19PM03</li>
+                            <li>Số điện thoại : 123456789</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 brk4">
+                    <div class="advice">
+                        <h4>Sản Phẩm</h4>
+                        <ul>
+                            <li>Sữa rửa mặt</li>
+                            <li>Tonner</li>
+                            <li>Tái tạo</li>
+                            <li>Kem Chống nắng</li>
+                            <li>Mắt môi</li>
+                            <li>Mặt lạ</li>
+                            <li>Bộ sản phẩm</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-3 brk5">
+                <div class="follow-us">
+                    <h4>Hỗ trợ khách hàng</h4>
+                    <ul>
+                        <li>Điều khoản và sử dụng bảo mật</li>
+                        <li>Chính sách bảo mật</li>
+                        <li>Chính sách trả hàng và hoàn tiền</li>
+                        <li>Phương thức giao hàng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 brk5">
+                <div class="copy-rt">
+                    <h4>COPYRIGHT</h4>
+                    <p>web được thiết kế để phục vụ cho việc học Lập Trình Web &#169 2021 Design by <a href="https://www.facebook.com/vanbabycute/" target="_blank">Hoàng Hồng Vân</a></p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <!---->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!---->
+</body>
+</html>

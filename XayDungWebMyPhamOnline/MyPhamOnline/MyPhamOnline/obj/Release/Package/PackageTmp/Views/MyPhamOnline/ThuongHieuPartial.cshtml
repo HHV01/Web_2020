@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MyPhamOnline.Models.THUONGHIEU>
+<ul class="list-group">
+    <li class="list-group-item active" style="font-weight:bold; text-align:center"> SẢN PHẨM THEO THƯƠNG HIỆU</li>
+    @foreach (var item in Model)
+    {
+    <a href="@Url.Action("SanPhamThuongHieu","MyPhamOnline", new { iMaTH= item.MaTH })"
+       class="list-group-item">@item.TenTH</a>
+    }
+
+</ul>

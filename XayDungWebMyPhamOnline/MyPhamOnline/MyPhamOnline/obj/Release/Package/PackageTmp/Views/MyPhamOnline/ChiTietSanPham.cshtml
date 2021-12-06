@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "ChiTietSanPham";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+
+    .thumbnail > p.ngaycapnhat {
+        margin-right: 120px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .thumbnail > p.giaban {
+        margin-right: 105px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+        .thumbnail > p.giaban > span {
+            font-size: 20px;
+            color: blue;
+        }
+
+    .thumbnail > p > a.btn-primary {
+        margin-left: 65%;
+    }
+
+    .thumbnail > h4.tensp {
+        color: red;
+        background-color: aqua;
+    }
+</style>
+
+<div class="row text-left">
+    <div class="  col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <div class="thumbnail" style="border-width:unset;border-color:blue;">
+
+            <div class="thumbnail">
+                <h4 class="tensp" style="text-align:center;">
+                    @Model.TenSP
+                </h4>
+                <img src="~/Images/@Model.AnhBia" alt="@Model.TenSP" />
+                <div class="motasach" style="visibility: visible">
+                    <p>
+                        @Html.Raw(Model.MoTa.ToString().Replace("\n", "<p></p>&nbsp&nbsp&nbsp"))
+                    </p>
+                </div>
+
+                <p class="ngaycapnhat">Ngày cập nhật: @Html.FormatValue(Model.NgayCapNhat, "{0:MM/dd/yyyy}")</p>
+                <p class="giaban">Giá bán: <span>@Html.FormatValue(Model.GiaBan, "{0:#,###.##0}") VNĐ</span></p>
+                <p>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new {ms = Model.MaSP, url = Request.Url.ToString()})" class="btn btn-primary" role="button">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to Cart
+                    </a>
+
+                </p>
+            </div>
+        </div>
+        <div id="comment_fb">
+            <div class="fb-comments" data-href="@Request.Url.ToString()" data-width="1100" data-numposts="5"></div>
+        </div>
+    </div>

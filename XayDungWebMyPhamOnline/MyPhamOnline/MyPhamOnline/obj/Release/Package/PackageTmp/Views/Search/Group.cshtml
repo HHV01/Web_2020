@@ -1,0 +1,29 @@
+﻿@model IEnumerable<IGrouping<int?, MyPhamOnline.Models.SANPHAM>>
+@{
+    ViewBag.Title = "Group";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>DANH SÁCH DANH MỤC SẢN PHẨM</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4 style="font-weight:bold; color:red;">MÃ DANH MỤC SẢN PHẨM @item.Key</h4>
+        <table border="1">
+            <tr style="background-color:burlywood; font-weight:bold;">
+                <td>Mã Sản Phẩm</td>
+                <td>Tên Sản Phẩm</td>
+                <td>Mã Danh Mục</td>
+            </tr>
+            @foreach (var sanpham in item)
+            {
+                <tr>
+                    <td>@sanpham.MaSP</td>
+                    <td>@sanpham.TenSP</td>
+                    <td>@sanpham.DANHSACHSP.TenDS</td>
+                </tr>
+            }
+        </table>
+    </div>
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MyPhamOnline.Models.ReportInfo>
+
+@{
+    ViewBag.Title = "ThongKe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>THỐNG KÊ SẢN PHẨM THEO DANH MỤC</h2>
+<table border="1">
+    <tr style="background-color:burlywood; font-weight:bold;">
+        <td>Mã Danh Mục</td>
+        <td>Số Đầu Sản Phẩm</td>
+        <td>Tổng số sản phẩm</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Count</td>
+            <td>@item.Sum</td>
+
+        </tr>
+
+    }
+</table>

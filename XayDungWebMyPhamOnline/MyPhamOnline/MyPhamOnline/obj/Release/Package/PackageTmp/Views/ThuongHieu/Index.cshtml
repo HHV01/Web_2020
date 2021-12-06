@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<MyPhamOnline.Models.THUONGHIEU>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenTH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuSu)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuSu)
+            </td>
+
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaTH }) |
+                @*@Html.ActionLink("Details", "Details", new { id=item.MaNXB }) |*@
+                <a href="~/ThuongHieu/Details?id=@item.TenTH">Chi Tiết</a> |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaTH })
+            </td>
+        </tr>
+    }
+
+</table>

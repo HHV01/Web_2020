@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3>Send Email With Attachment</h3>
+<div>
+    <form action="/FileAndEmail/SendMail" name="SendMail" method="post" enctype="multipart/form-data">
+        <div>From:</div>
+        <input name="From" type="email" required />
+        <div>To:</div>
+        <input name="To" type="email" required />
+        <div>Subject:</div>
+        <input name="Subject" type="text" />
+        <div>Notes:</div>
+        <textarea name="Notes" rows="4"></textarea>
+        <div>Attachment:</div>
+        <input name="Attachment" type="file" />
+        <hr />
+        <input type="submit" value="Send" />
+    </form>
+</div>
+
+
